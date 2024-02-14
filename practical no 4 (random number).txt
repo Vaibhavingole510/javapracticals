@@ -1,0 +1,40 @@
+public class Main
+{
+
+
+    public static void main(String[] args) {
+        int[] numbers = new int[10000];
+        int primeCount = 0;
+
+        // Generate and print numbers
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = i + 1;
+            System.out.print(numbers[i] + " ");
+        }
+        System.out.println();
+
+        // Count prime numbers
+        for (int number : numbers) {
+            if (isPrime(number)) {
+                primeCount++;
+            }
+        }
+
+        System.out.println("Total number of prime numbers: " + primeCount);
+    }
+
+    // Method to check if a number is prime
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+	
